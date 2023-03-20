@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Test{
     public static void main(String[] args) throws FileNotFoundException {
+
         ArrayList<String> sonad = new ArrayList<>();
 
         File file = new File("sonad.txt");
@@ -16,6 +17,11 @@ public class Test{
 
         }catch(Exception ignored){}
 
-        System.out.println(sonad.size());
+        for (int i = 0; i < sonad.size(); i++) {
+            System.out.println(sonad.get((int) Math.ceil(Math.random()*sonad.size())));
+        }
+
+
+        
     }
 }
