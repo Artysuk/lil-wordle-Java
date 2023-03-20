@@ -7,7 +7,7 @@ public class ListAndFile{
     private ArrayList<String> sonad;
 
     ListAndFile(){
-        this.sonad = new ArrayList<>();
+        sonad = new ArrayList<>();
     }
 
 
@@ -17,21 +17,21 @@ public class ListAndFile{
 
             while(sc.hasNextLine()){
 
-                this.sonad.add(sc.nextLine()); // add to list
+                sonad.add(sc.nextLine()); // add to list
             }
 
         }catch(Exception ignored){}
 
         System.out.println("List tehtud");
-        return this.sonad;
+        return sonad;
 
     }
 
     public String getRandomWord(){
-        return this.sonad.get((int) Math.floor(Math.random()*sonad.size())); // random word
+        return sonad.get((int) Math.floor(Math.random()*sonad.size())); // random word
     }
 
     public ArrayList<String> getSonad() {
-        return this.sonad;
+        return sonad;
     }
 }
