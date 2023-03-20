@@ -20,8 +20,5 @@ public class Test{
         for (int i = 0; i < sonad.size(); i++) {
             System.out.println(sonad.get((int) Math.ceil(Math.random()*sonad.size())));
         }
-
-
-        
     }
 }
