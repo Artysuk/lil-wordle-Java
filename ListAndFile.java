@@ -1,5 +1,4 @@
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,7 +11,7 @@ public class ListAndFile{
     }
 
 
-    public ArrayList<String> makeAList(String fileName) throws FileNotFoundException {
+    public ArrayList<String> makeAList(String fileName){
 
         try(Scanner sc = new Scanner(new File(fileName))){ // new file
 
@@ -23,12 +22,13 @@ public class ListAndFile{
 
         }catch(Exception ignored){}
 
+        System.out.println("List tehtud");
         return this.sonad;
 
     }
 
-    public String getRandomWord(ArrayList<String> sonad){
-        return sonad.get((int) Math.floor(Math.random()*sonad.size())); // random word
+    public String getRandomWord(){
+        return this.sonad.get((int) Math.floor(Math.random()*sonad.size())); // random word
     }
 
     public ArrayList<String> getSonad() {
