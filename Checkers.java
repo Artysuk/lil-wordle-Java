@@ -22,6 +22,8 @@ public abstract class Checkers {
         return true;
     }
 
+    //https://www.google.com/search?client=opera-gx&q=how+to+check+if+a+word+has+vowels+in+java&sourceid=opera&ie=UTF-8&oe=UTF-8#fpstate=ive&vld=cid:eb501137,vid:iL3EZ01KY9s
+
     public boolean vowelChecker(String typedWord){
         return typedWord.toLowerCase().matches(vowels);
     }
