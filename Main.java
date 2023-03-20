@@ -1,10 +1,11 @@
+/*
+https://courses.cs.ut.ee/2023/OOP/spring/Main/Ruhm1
+ */
 import java.io.FileNotFoundException;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        ListAndFile listAndFile = new ListAndFile();
-        listAndFile.makeAList("sonad.txt");
-        System.out.println(listAndFile.getRandomWord());
-        System.out.println(listAndFile.getSonad().size());
+        GameAndText gameAndText = new GameAndText();
+        System.out.println(gameAndText);
     }
 }
