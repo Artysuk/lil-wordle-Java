@@ -28,10 +28,10 @@ public class ListAndFile{
     }
 
     public String getRandomWord(ArrayList<String> sonad){
-        return sonad.get((int) Math.floor(Math.random()*sonad.size())); // random word)
+        return sonad.get((int) Math.floor(Math.random()*sonad.size())); // random word
     }
 
     public ArrayList<String> getSonad() {
-        return sonad;
+        return this.sonad;
     }
 }
