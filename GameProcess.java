@@ -1,15 +1,15 @@
-import javax.sound.midi.Soundbank;
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.SortedMap;
+
 
 public class GameProcess {
     private int tries = 6;
     private static final String GREEN = "\u001B[32m";
     private static final String RESET = "\u001B[0m";
     private static final String YELLOW = "\u001B[33m";
+    private static final String BLACK = "\u001B[30m";
     public void Game(StringBuilder randomWord){
         Checkers check = new Checkers();
         ListAndFile laf = new ListAndFile();
@@ -27,7 +27,6 @@ public class GameProcess {
 
             System.out.println("Teie katsete arv: " + tries);
             System.out.println("Teie saate kasutada järgmised tähed: ");
-
 
             for (int i = 0; i < alphabetGrey.length(); i++) {
                 if (i==alphabetGrey.length()-1){
@@ -54,6 +53,16 @@ public class GameProcess {
                 }
             }
 
+            if (alphabetUsed.length()!=0){
+                System.out.println("Teie olete kasutanud valesti järgmised tähed: ");
+
+                for (int i = 0; i < alphabetUsed.length(); i++) {
+                    if (i==alphabetUsed.length()-1){
+                        System.out.println(BLACK + alphabetUsed.charAt(i) + " " + RESET);
+                    }else System.out.print(BLACK + alphabetUsed.charAt(i) + " " + RESET);
+                }
+            }
+
             System.out.print("Kirjutage oma sõna: ");
             System.out.println(userInput);
             Scanner sc = new Scanner(System.in);
@@ -68,24 +77,13 @@ public class GameProcess {
                 break;
             }
 
-
             ArrayList<Integer> greenIndex = check.greenLetter(answer, randomWord);
-            System.out.println(greenIndex);
             alphabet.add_Green_Remove_Grey(answer, greenIndex);
 
             ArrayList<Integer> yellowIndex = check.yellowLetter(answer, randomWord);
             yellowIndex.removeAll(greenIndex);
-            System.out.println(yellowIndex);
-
-
-
-
-
-
-
 
             ArrayList<Integer> yellowIndexAlphabet = new ArrayList<>();
-
 
             userInput ="";
             x:for (int i = 0; i < 5; i++) {
@@ -104,7 +102,7 @@ public class GameProcess {
                                     userInput+= GREEN + answer.charAt(greenIndex.get(j)) + RESET + " ";
                                     continue x;
                                 }
-                                else if ( answer.indexOf(String.valueOf(randomWord.charAt(yellowIndex.get(k))))  /*yellowIndex.get(k)*/ == i) {
+                                else if (answer.indexOf(String.valueOf(randomWord.charAt(yellowIndex.get(k)))) == i) {
                                     userInput+= YELLOW + randomWord.charAt(yellowIndex.get(k)) + RESET + " ";
                                     yellowIndexAlphabet.add(i);
                                     continue x;
@@ -112,12 +110,38 @@ public class GameProcess {
                             }
                         }
                     }
+                } else if (yellowIndex.size()!=0) {
+                    for (int k = 0; k < yellowIndex.size(); k++) {
+                        if (answer.indexOf(String.valueOf(randomWord.charAt(yellowIndex.get(k)))) == i) {
+                            userInput += YELLOW + randomWord.charAt(yellowIndex.get(k)) + RESET + " ";
+                            yellowIndexAlphabet.add(i);
+                            continue x;
+                        }
+                    }
                 }
                 userInput+="_ ";
             }
-            System.out.println("Yellow index alphabet: " + yellowIndexAlphabet) ;
             alphabet.add_Yellow_Remove_Grey(answer, yellowIndexAlphabet);
 
+            ArrayList<Integer> usedIndex = new ArrayList<>(Arrays.asList(0,1,2,3,4));
+            usedIndex.removeAll(greenIndex);
+            usedIndex.removeAll(yellowIndexAlphabet);
+            for (int i = 0; i < usedIndex.size(); i++) {
+                for (int j = 0; j < greenIndex.size(); j++) {
+                    if (answer.charAt(usedIndex.get(i)) == answer.charAt(greenIndex.get(j))){
+                        usedIndex.remove(i);
+                    }
+                }
+            }
+            for (int i = 0; i < usedIndex.size(); i++) {
+                for (int j = 0; j < yellowIndexAlphabet.size(); j++) {
+                    if (answer.charAt(usedIndex.get(i)) == answer.charAt(yellowIndexAlphabet.get(j))){
+                        usedIndex.remove(i);
+                    }
+                }
+            }
+
+            alphabet.add_Used_Remove_Grey(answer, usedIndex);
 
             tries--;
         }
