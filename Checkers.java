@@ -1,18 +1,16 @@
-public abstract class Checkers {
-    private int wordLength = 5;
-    private String vowels = "aeiou";
-    private String consonants = "qwrtpasdfghjklzxcvbnm";
+import java.util.ArrayList;
 
-    private int maxTries = 10;
+public class Checkers {
+    private int wordLength = 5;
 
     public boolean wordLengthChecker(int wordLength){
 
-        if (this.wordLength < wordLength){
+        if (this.wordLength > wordLength){
 
             System.out.println("Sõna pikkus on liiga lühike");
             return false;
 
-        } else if (this.wordLength> wordLength) {
+        } else if (this.wordLength < wordLength) {
 
             System.out.println("Sõna pikkus on liiga suur");
             return false;
@@ -22,16 +20,34 @@ public abstract class Checkers {
         return true;
     }
 
-    //https://www.google.com/search?client=opera-gx&q=how+to+check+if+a+word+has+vowels+in+java&sourceid=opera&ie=UTF-8&oe=UTF-8#fpstate=ive&vld=cid:eb501137,vid:iL3EZ01KY9s
+    public boolean wordInList(StringBuilder sona, ArrayList<String> massiiv){
+        if (massiiv.contains(String.valueOf(sona))){
+            return false;
+        }
+        System.out.println("Seda sõna pole sõnade loendis");
+        return true;
+    }
 
-    public boolean vowelChecker(String typedWord){
-        return typedWord.toLowerCase().matches(vowels);
-    }
-    public boolean consonantChecker(String typedWord){
-        return typedWord.toLowerCase().matches(consonants);
+    public ArrayList<Integer> greenLetter(StringBuilder user,StringBuilder random){
+        ArrayList<Integer> resultaad = new ArrayList<>();
+        for (int i = 0; i < user.length(); i++) {
+            if(user.charAt(i) == (random.charAt(i))){
+                resultaad.add(i);
+            }
+        }
+        return resultaad;
     }
 
-    public boolean triesChecker(int counter){
-        return counter == maxTries;
+    public ArrayList<Integer> yellowLetter(StringBuilder user,StringBuilder random){
+        ArrayList<Integer> resultaad = new ArrayList<>();
+
+        for (int i = 0; i < user.length(); i++) {
+            if(random.indexOf(String.valueOf(user.charAt(i)))!=-1){
+                resultaad.add(random.indexOf(String.valueOf(user.charAt(i))));
+            }
+        }
+
+        return resultaad;
     }
+
 }

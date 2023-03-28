@@ -5,7 +5,13 @@ import java.io.FileNotFoundException;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        GameAndText gameAndText = new GameAndText();
+        Text gameAndText = new Text();
         System.out.println(gameAndText);
+        GameProcess game = new GameProcess();
+        ListAndFile laf = new ListAndFile();
+
+        StringBuilder randomSona = new StringBuilder(laf.getRandomWord());
+        System.out.println(randomSona);
+        game.Game(randomSona);
     }
 }

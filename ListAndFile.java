@@ -6,14 +6,9 @@ public class ListAndFile{
 
     private ArrayList<String> sonad;
 
-    ListAndFile(){
+    public ListAndFile(){
         sonad = new ArrayList<>();
-    }
-
-
-    public ArrayList<String> makeAList(String fileName){
-
-        try(Scanner sc = new Scanner(new File(fileName))){ // new file
+        try(Scanner sc = new Scanner(new File("sonad.txt"))){ // new file
 
             while(sc.hasNextLine()){
 
@@ -21,14 +16,10 @@ public class ListAndFile{
             }
 
         }catch(Exception ignored){}
-
-        System.out.println("List tehtud");
-        return sonad;
-
     }
 
     public String getRandomWord(){
-        return sonad.get((int) Math.floor(Math.random()*sonad.size())); // random word
+        return sonad.get((int) Math.floor(Math.random()*sonad.size()));
     }
 
     public ArrayList<String> getSonad() {

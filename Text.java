@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class GameAndText {
+public class Text {
     public String welcomeText(){
         return manyDashes() +"\n Sõnadle\n" + manyDashes();
     }
@@ -10,7 +10,7 @@ public class GameAndText {
 
     public String rulesText(){
 
-        return "\n Arvake ära sõna 666 katsega" +
+        return "\n Arvake ära sõna 6 katsega" +
                 "\n Iga sõna peab olema 5 täheline" +
                 "\n Kui täht on vale/on õiges kohas/vales kohas, siis mina teile sellest kirjutan." +
                 "\n SÕNAD ON INGLISE KEELES!!!!\n";
@@ -22,13 +22,13 @@ public class GameAndText {
         return "\n Näide (Sõna: glove)\n"+
                 manyDashes()+
                 "\n Kirjutage sõna (inglise keeles, 5 tähte): sunny" +
-                "\n Esimene,teine,kolmas,neljas,viies täht on vale.\n Proovige veel üks kord (proove jäänud: 9)\n"+
+                "\n Esimene,teine,kolmas,neljas,viies täht on vale.\n Proovige veel üks kord (proove jäänud: 5)\n"+
                 manyDashes() +
                 "\n Kirjutage sõna (inglise keeles, 5 tähte): pills" +
-                "\n Esimene,teine,neljas,viies täht on vale.\n Kolmas täht on vales asukohas.\n Proovige veel üks kord (proove jäänud: 8)\n" +
+                "\n Esimene,teine,neljas,viies täht on vale.\n Kolmas täht on vales asukohas.\n Proovige veel üks kord (proove jäänud: 4)\n" +
                 manyDashes() +
                 "\n Kirjutage sõna (inglise keeles, 5 tähte): block" +
-                "\n Esimene,neljas,viies täht on vale.\n Teine,kolmas täht on õiged.\n Proovige veel üks kord (proove jäänud: 7)\n" +
+                "\n Esimene,neljas,viies täht on vale.\n Teine,kolmas täht on õiged.\n Proovige veel üks kord (proove jäänud: 3)\n" +
                 manyDashes() +
                 "\n Kirjutage sõna (inglise keeles, 5 tähte): glove" +
                 "\n Palju õnne, te saite sõnast õigesti aru!!!\n";
