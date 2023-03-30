@@ -34,6 +34,7 @@
  * Tegemise mured:
  *
  *      Ausalt öeldes, neid ei olnud, kuid lihtsalt oli natuke mahukas
+ *      Ja lisaks, et natuke puudusid teadused Stringbuilderitest
  *
  *Hinnang :
  *
@@ -92,6 +93,10 @@
  *      Artur - Text,Checkers,ListAndFile
  *      Many hours, did not count them
  *
+ * Making Concerns:
+ *      To be honest, there weren't any, but it was just a bit bulky
+ *      And in addition, there was a little lack of knowledge about Stringbuilders
+ *
  * Test:
  *      We tested the game in such a way that we initially tried the correct variants, then the wrong variants, to see if there was an error.
  *      Then we tried to find some bugs, but I guess nothing was found
@@ -119,7 +124,7 @@ public class Main {
 
         StringBuilder randomSona = new StringBuilder(laf.getRandomWord());//Siin luuakse uue sõna, mis tuleb failist suvaliselt
 
-        System.out.println(randomSona);//Et teada, mis sõna tuleb, jäime souti siin
+        //System.out.println(randomSona);//Et teada, mis sõna tuleb, jäime souti siin
         game.Game(randomSona);//Mäng algabsiit
     }
 }

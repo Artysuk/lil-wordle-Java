@@ -12,6 +12,7 @@ public class GameProcess {
     private static final String BLACK = "\u001B[30m";
 
     public void Game(StringBuilder randomWord){
+
         Text text = new Text();
         Checkers check = new Checkers();
         ListAndFile laf = new ListAndFile();
@@ -19,7 +20,7 @@ public class GameProcess {
         Alphabet alphabet = new Alphabet();
         String userInput = "_ _ _ _ _";
 
-
+        System.out.println("Let the game begin!");
         while (tries!=0) {
 
             // Loome tähte erinevaid värvidega
@@ -53,7 +54,7 @@ public class GameProcess {
             }
 
             System.out.print("Kirjutage oma sõna: ");
-            System.out.println(userInput);
+            System.out.println(userInput + "\n" + text.manyDashes());
 
             Scanner sc = new Scanner(System.in); // Palume, et inimene kirjutaks sõna
 
