@@ -15,15 +15,15 @@ public class Alphabet { //klass selleks et jälgida kõik tähtede muudatused
             letterWord.append(user.charAt(yellowIndex.get(i)));
         }//Mängija sõnast õiged tähed lähevad abi sõnale
 
-        yellow.append(letterWord);//täed lisatakse kollase tähestikusse
+        yellow.append(letterWord);//tähed lisatakse kollase tähestikusse
 
         for (int i = 0; i < letterWord.length(); i++) {
 
             if (grey.indexOf(Character.toString(letterWord.charAt(i)))!=-1){
                 // kontroll: kas kogu sõnastikus on need tähed või ei ole
-                // võtakse abi sõnast iga täht(märk), muutukse seda sõnaks, ja kuj halli tähestikkus seda täht on olemas siis vastuseks ta ei anna -1
+                // võetakse abi sõnast iga täht(märk), muutukse seda sõnaks, ja kuj halli tähestikkus seda täht on olemas siis vastuseks ta ei anna -1
                 grey.deleteCharAt(grey.indexOf(Character.toString(letterWord.charAt(i))));
-                //võtakse abi sõnast täht, leiame selle tähe index halli tähestikus ja kustutame täht selles indeksis hallis tähestikus
+                //võetakse abi sõnast täht, leiame selle tähe index halli tähestikus ja kustutame täht selles indeksis hallis tähestikus
 
             }
         }

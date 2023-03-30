@@ -14,16 +14,16 @@ public class GameProcess {
 
         Text text = new Text(); // klass, kust me saame kõik sõnumid
         Checkers check = new Checkers(); // klass, mis kontrollib mingeid tegevusi
-        ListAndFile laf = new ListAndFile(); // kontrollimiseks
-        boolean result = false; // mängu resultaati leidmiseks
-        Alphabet alphabet = new Alphabet(); // klass, kus on kõik tähistikud
+        ListAndFile laf = new ListAndFile(); // Listidega ja failidega töötamine
+        boolean result = false; // mängu resultaati leidmime
+        Alphabet alphabet = new Alphabet(); // klass, kus saab töötada tähestikkuga
         String userInput = "_ _ _ _ _"; //algne mängija vastus(tühi)
 
         System.out.println("Let the game begin!");
         while (tries!=0) {//kontrollib kas on veel katseid mängimiseks
 
 
-            // Loome tähistikud erinevaid värvidega, selleks et tulevikus väljastada ekraanile tähtede informatsiooni
+            // Loome tähistikud erinevate värvidega, selleks et tulevikus väljastada ekraanile tähtede informatsiooni
 
             StringBuilder alphabetGreen = alphabet.getGreen();
             StringBuilder alphabetGrey = alphabet.getGrey();
@@ -61,12 +61,12 @@ public class GameProcess {
 
             StringBuilder answer = new StringBuilder(sc.nextLine());
 
-            if (!check.wordLengthChecker(answer.length())) continue;// Kui sõna pikkkus on suurem või väiksem kui 5, siis see on vale, ja me läheme tagasi
+            if (!check.wordLengthChecker(answer.length())) continue;// Kui sõna pikkkus on suurem või väiksem kui 5, siis seda meile ei sobi ning me alustame otsest.
 
-            if(check.wordInList(answer, laf.getSonad())) continue;// Samalt kui sõna puudub failiListis, siis sama tagasi
+            if(check.wordInList(answer, laf.getSonad())) continue;// Samalt kui sõna puudub failiListis, siis sama otsest.
 
             if(answer.toString().equals(randomWord.toString())) {// Kui sõna on see, mida palutati, siis läheme tsükklist välja
-                result = true; //muutume resultaat, anname talle väärtus, mis näitab võitmist
+                result = true; //muudame resultaat, anname talle väärtuse, mis näitab võitmist
                 break;
             }
 
@@ -147,7 +147,7 @@ public class GameProcess {
 
             for (int i = 0; i < usedIndex.size(); i++) {//kontroll, mis kontrollib kas sõnas on samad tähed,
                 //Näiteks sõna: beers, ütleme, et esimene "e" on õiges kohas, aga teine ei ole, siis me paneme e rohelise sõnastikuse
-                //ja me ei saa panna teine "e" used sõnastikuse, sest see ei ole tehniliselt vale täht
+                //ja me ei saa panna teist "e" kasutatu sõnastiku, sest see ei ole tehniliselt vale täht
 
                 for (int j = 0; j < greenIndex.size(); j++) {
                     if (answer.charAt(usedIndex.get(i)) == answer.charAt(greenIndex.get(j))){
@@ -168,7 +168,7 @@ public class GameProcess {
 
             tries--; // tsükli lõpp, võtab üks katse maha
         }
-        if (result){ //vaatab resultaati väärtust(true = võit, false = kaotus)
+        if (result){ //vaatab resultaadi väärtust(true = võit, false = kaotus)
             System.out.println(text.winningSpeech());
         }else {
             System.out.println(text.loserSpeech());

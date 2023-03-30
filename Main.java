@@ -116,9 +116,9 @@ public class Main {
 
         //Siin me teeme objekte ning paneme siit terve koodi töötama
 
-        Text gameAndText = new Text();
-        GameProcess game = new GameProcess();
-        ListAndFile laf = new ListAndFile();
+        Text gameAndText = new Text(); // Klass, mis on mõeldud tekstide kirjutamiseks
+        GameProcess game = new GameProcess(); //Klass, mis vastutab terve mängu protsessi
+        ListAndFile laf = new ListAndFile(); //Klass, mis on mõeldud listide ja failide töödeldamiseks.
 
         System.out.println(gameAndText);//Siin väljastatakse reegleid
 
