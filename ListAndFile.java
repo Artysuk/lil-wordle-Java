@@ -8,21 +8,21 @@ public class ListAndFile{
 
     public ListAndFile(){
         sonad = new ArrayList<>();
-        try(Scanner sc = new Scanner(new File("sonad.txt"))){ // new file
+        try(Scanner sc = new Scanner(new File("sonad.txt"))){ // uus fail
 
             while(sc.hasNextLine()){
 
-                sonad.add(sc.nextLine()); // add to list
+                sonad.add(sc.nextLine()); // Lisame listi
             }
 
         }catch(Exception ignored){}
     }
 
     public String getRandomWord(){
-        return sonad.get((int) Math.floor(Math.random()*sonad.size()));
+        return sonad.get((int) Math.floor(Math.random()*sonad.size())); // tagastame suvalise sõna listist
     }
 
     public ArrayList<String> getSonad() {
-        return sonad;
+        return sonad; //tagastame terve listi
     }
 }

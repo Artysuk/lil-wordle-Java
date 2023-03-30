@@ -21,6 +21,7 @@ public class Checkers {
     }
 
     public boolean wordInList(StringBuilder sona, ArrayList<String> massiiv){
+
         if (massiiv.contains(String.valueOf(sona))){
             return false;
         }
@@ -29,25 +30,32 @@ public class Checkers {
     }
 
     public ArrayList<Integer> greenLetter(StringBuilder user,StringBuilder random){
-        ArrayList<Integer> resultaad = new ArrayList<>();
+
+        ArrayList<Integer> result = new ArrayList<>();
+
         for (int i = 0; i < user.length(); i++) {
+
             if(user.charAt(i) == (random.charAt(i))){
-                resultaad.add(i);
+                result.add(i);
             }
+
         }
-        return resultaad;
+        return result;
     }
 
     public ArrayList<Integer> yellowLetter(StringBuilder user,StringBuilder random){
-        ArrayList<Integer> resultaad = new ArrayList<>();
+
+        ArrayList<Integer> result = new ArrayList<>();
 
         for (int i = 0; i < user.length(); i++) {
+
             if(random.indexOf(String.valueOf(user.charAt(i)))!=-1){
-                resultaad.add(random.indexOf(String.valueOf(user.charAt(i))));
+                result.add(random.indexOf(String.valueOf(user.charAt(i))));
             }
+
         }
 
-        return resultaad;
+        return result;
     }
 
 }

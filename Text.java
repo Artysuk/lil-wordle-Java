@@ -1,11 +1,18 @@
 import java.util.Scanner;
 
 public class Text {
+
+
     public String welcomeText(){
         return manyDashes() +"\n Sõnadle\n" + manyDashes();
     }
+
     public String manyDashes(){
         return "--------------------------------------------------------------";
+    }
+
+    public String numberOfTries(int tries){
+        return "Teie katsete arv:" + tries;
     }
 
     public String rulesText(){
@@ -21,24 +28,30 @@ public class Text {
         return "Palju õnne! Te saite sõnast ilusasti aru!";
     }
 
+    public void remainingLettersAlphabet(StringBuilder alphabetGrey){
+
+        System.out.println("Teie saate kasutada järgmised tähed: ");
+
+        for (int i = 0; i < alphabetGrey.length(); i++) {
+
+            if (i==alphabetGrey.length()-1)
+                System.out.println(alphabetGrey.charAt(i) + " ");
+
+            else
+                System.out.print(alphabetGrey.charAt(i) + " ");
+        }
+    }
+
+
+
     public String loserSpeech(){
         return "Kahjuks te olete kaotanud";
     }
     public String writeExample(){
 
-        return "\n Näide (Sõna: glove)\n"+
-                manyDashes()+
-                "\n Kirjutage sõna (inglise keeles, 5 tähte): sunny" +
-                "\n Esimene,teine,kolmas,neljas,viies täht on vale.\n Proovige veel üks kord (proove jäänud: 5)\n"+
-                manyDashes() +
-                "\n Kirjutage sõna (inglise keeles, 5 tähte): pills" +
-                "\n Esimene,teine,neljas,viies täht on vale.\n Kolmas täht on vales asukohas.\n Proovige veel üks kord (proove jäänud: 4)\n" +
-                manyDashes() +
-                "\n Kirjutage sõna (inglise keeles, 5 tähte): block" +
-                "\n Esimene,neljas,viies täht on vale.\n Teine,kolmas täht on õiged.\n Proovige veel üks kord (proove jäänud: 3)\n" +
-                manyDashes() +
-                "\n Kirjutage sõna (inglise keeles, 5 tähte): glove" +
-                "\n Palju õnne, te saite sõnast õigesti aru!!!\n";
+        return "\n Näide (Sõna: glove)\n" +
+                numberOfTries(6) + "\n";
+
     }
 
     public String toString(){
@@ -74,5 +87,46 @@ public class Text {
             }
         }
         return "\nOlgu nii\n";
+    }
+
+
+    public void rightLettersAndPlaces(StringBuilder alphabetGreen, String GREEN, String RESET) {
+
+        System.out.println("Teie olete kasutanud järgmised tähed õiges kohas: ");
+
+        for (int i = 0; i < alphabetGreen.length(); i++) {
+
+            if (i==alphabetGreen.length()-1)
+                System.out.println(GREEN + alphabetGreen.charAt(i) + " " + RESET);
+
+            else System.out.print(GREEN + alphabetGreen.charAt(i) + " " + RESET);
+        }
+    }
+
+    public void justRightLetters(StringBuilder alphabetYellow, String YELLOW, String RESET) {
+
+        System.out.println("Teie olete kasutanud õigesti järgmised tähed: ");
+
+        for (int i = 0; i < alphabetYellow.length(); i++) {
+
+            if (i==alphabetYellow.length()-1)
+                System.out.println(YELLOW + alphabetYellow.charAt(i) + " " + RESET);
+
+            else System.out.print(YELLOW + alphabetYellow.charAt(i) + " " + RESET);
+        }
+
+    }
+
+    public void incorrectLetters(StringBuilder alphabetUsed, String BLACK, String RESET) {
+
+        System.out.println("Teie olete kasutanud valesti järgmised tähed: ");
+
+        for (int i = 0; i < alphabetUsed.length(); i++) {
+
+            if (i==alphabetUsed.length()-1){
+                System.out.println(BLACK + alphabetUsed.charAt(i) + " " + RESET);
+
+            }else System.out.print(BLACK + alphabetUsed.charAt(i) + " " + RESET);
+        }
     }
 }
