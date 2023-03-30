@@ -17,6 +17,13 @@ public class Text {
 
     }
 
+    public String winningSpeech(){
+        return "Palju õnne! Te saite sõnast ilusasti aru!";
+    }
+
+    public String loserSpeech(){
+        return "Kahjuks te olete kaotanud";
+    }
     public String writeExample(){
 
         return "\n Näide (Sõna: glove)\n"+
