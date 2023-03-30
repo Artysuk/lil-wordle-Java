@@ -28,7 +28,7 @@
  *Ajakulu:
  *
  *      Nikita - GameProcess, Alphabet
- *      Artur - Text,Checkers,ListAndFile
+ *      Artur - Text,Checkers,ListAndFile, natuke Alphabet
  *      Palju tunde läks, ei tea :')
  *
  * Tegemise mured:
@@ -88,9 +88,9 @@
  *      GameProcess (Class where the play process takes place)
  *      Alphabet (Class responsible for what color is the star)
  *      Checkers (Class for creating all conditions)
- *      Time spent:
+ * Time spent:
  *      Nikita - GameProcess, Alphabet
- *      Artur - Text,Checkers,ListAndFile
+ *      Artur - Text,Checkers,ListAndFile, a bit of an Alphabet
  *      Many hours, did not count them
  *
  * Making Concerns:
