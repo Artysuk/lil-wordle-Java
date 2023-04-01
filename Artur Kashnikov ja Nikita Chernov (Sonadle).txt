@@ -108,3 +108,5 @@ https://courses.cs.ut.ee/2023/OOP/spring/Main/Ruhm1
 
 
 Sama tekst on kirjutatud Main.java failis
+Oli kirjutatud inglise keeles, sest panime githubi sisse
+Link:https://github.com/Artysuk/lil-wordle-Java.git
